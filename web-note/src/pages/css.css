@@ -1,0 +1,23 @@
+.ani-item-enter {
+    opacity: 0;
+}
+
+.ani-item-enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
+    background-color: brown;
+} 
+
+
+.ani-item-exit {
+    opacity: 1;
+}
+
+.ani-item-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.test-css {
+    color: blueviolet;
+}

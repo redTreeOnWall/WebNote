@@ -2,49 +2,34 @@ import React from 'react'
 
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
+import Album from './Album';
 
+var page = {
+    home:1,
+    login:2,
+    sighUp:3
+}
 export default class MainPage extends React.Component {
     constructor(p) {
         super(p)
-    }
-    render() {
-
-        return <DrawerTest></DrawerTest>
-
-    }
-}
-
-class DrawerTest extends React.Component {
-    constructor(p) {
-        super(p)
         this.state = {
-            left:false,
-            right:false,
-            top:false,
-            bottom:false
+            pageName:page.home
         }
     }
-    toggleDrawer(pos, isOpen){
-        console.log("pos:")
-    }
     render() {
-        return (<div>
-            <Button onClick={this.toggleDrawer('left', true)}>Open Left</Button>
-            <Button onClick={this.toggleDrawer('right', true)}>Open Right</Button>
-            <Button onClick={this.toggleDrawer('top', true)}>Open Top</Button>
-            <Button onClick={this.toggleDrawer('bottom', true)}>Open Bottom</Button>
-            {/* <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
-                {sideList('left')}
-            </Drawer>
-            <Drawer anchor="top" open={state.top} onClose={toggleDrawer('top', false)}>
-                {fullList('top')}
-            </Drawer>
-            <Drawer anchor="bottom" open={state.bottom} onClose={toggleDrawer('bottom', false)}>
-                {fullList('bottom')}
-            </Drawer>
-            <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
-                {sideList('right')}
-            </Drawer> */}
-        </div>)
+        var pageName = this.state.pageName;
+        if(pageName == page.home){
+            return <HomePage></HomePage>
+        }
     }
 }
+
+class HomePage extends React.Component{
+    constructor(p){
+        super(p)
+    }
+    render(){
+        return <Album></Album>
+    }
+}
+
